@@ -24,57 +24,32 @@ export default function App() {
                 />
             </head>
             <body>
-                <div id="header" className="flex-header" style={{ backgroundColor: "#ccebf1" }}>
-                    <h3 id="name" className="flex-name" style={{ fontSize: 40, color: "black" }}>
-                        Kameron Ferrer
-                    </h3>
-                    <a
-                        className="flex-links"
-                        style={{ padding: 15 }}
-                        href="#about"
-                    >
-                        <i style={{ float: "right", fontSize: 20, color: "black" }}> About</i>
-                    </a>
-                    <a
-                        style={{ padding: 15 }}
-                        href="#portfolio"
-                    >
-                        <i style={{ float: "right", fontSize: 20, color: "black" }}>
-                            {" "}
-                            Portfolio{" "}
-                        </i>
-                    </a>
-                    <a
-                        style={{ padding: 15 }}
-                        href="#contact"
-                    >
-                        <i style={{ float: "right", fontSize: 20, color: "black" }}> Contact </i>
-                    </a>
-
+                <div id="nav-bar" className="navigation-bar" style={{ backgroundColor: "#ccebf1" }}>
+                    <div id="nav-header" className="navigation-header">
+                        <a className="navigation-item" href="#about">
+                            About
+                        </a>
+                        <a className="navigation-item" href="#portfolio">
+                            Portfolio
+                        </a>
+                        <a className="navigation-item" href="#contact">
+                            Contact
+                        </a>
+                    </div>
                 </div>
 
                 <br />
 
                 <div className="container" style={{ marginTop: 30 }}>
                     <hr className="featurette-divider" />
-                    <div id="about" className="row featurette">
-                        <div className="col-md-7">
-                            <h2
-                                className="featurette-heading"
-                                style={{ backgroundColor: "#eefcff" }}
-                            >
-                                A LITTLE ABOUT <span className="text-muted">ME.</span>
-                            </h2>
-                            <p className="lead" style={{ backgroundColor: "#ededed", padding: 15 }}>
-                                Welcome to my home page. My name is Kameron Ferrer and I am a Filipino
-                                American born on September 29th, 2002. I am a 4th year Computer
-                                Science major at CSULB and I plan to graduate in Fall 2024. During my
-                                time at CSULB I have gained experience in C languages, and As a career
-                                I want to either become a Game Programmer or a Software Engineer. I
-                                hope that I can meet a lot of new people at CSULB and I hope I can
-                                become an amazing programmer while at CSULB!
-                            </p>
+                    <div id="about" className="about-me-header">
+                        <div className="about-me">
+                            ABOUT <span className="text-muted">ME</span>
                         </div>
+                        
+                    </div>
+                    <div className="row featurette">
+                        
                         <div className="col-md-5">
                             <img
                                 src={pfp}
@@ -82,7 +57,17 @@ export default function App() {
                                 width={400}
                                 height={400}
                             />
+                            <p className="lead" style={{ backgroundColor: "#ededed", padding: 15 }}>
+                                I am a Computer Science graduate from California State University, Long Beach, with a strong passion for software development, artificial intelligence, and problem-solving. My expertise lies in backend development, database management, and AI-driven applications, where I strive to create innovative and efficient solutions.
+                                I am always eager to learn and explore emerging technologies, particularly in AI, full-stack development, and cloud computing. My goal is to contribute my skills and passion for technology to a forward-thinking organization, helping build impactful software solutions that enhance user experiences.
+                                Let's connect and collaborate!
+                            </p>
                         </div>
+                        
+                        <div className="col-md-7">
+                            
+                        </div>
+                        
                     </div>
 
                     <hr className="featurette-divider" />
