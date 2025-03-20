@@ -42,33 +42,31 @@ export default function App() {
 
                 <div className="container" style={{ marginTop: 30 }}>
                     <hr className="featurette-divider" />
-                    <div id="about" className="about-me-header">
-                        <div className="about-me">
+                    <section id="about" className="about-me">
+                        <div className="about-me-header">
                             ABOUT <span className="text-muted">ME</span>
                         </div>
-                        
-                    </div>
-                    <div className="row featurette">
-                        
-                        <div className="col-md-5">
-                            <img
-                                src={pfp}
-                                alt={pfp}
-                                width={400}
-                                height={400}
-                            />
-                            <p className="lead" style={{ backgroundColor: "#ededed", padding: 15 }}>
-                                I am a Computer Science graduate from California State University, Long Beach, with a strong passion for software development, artificial intelligence, and problem-solving. My expertise lies in backend development, database management, and AI-driven applications, where I strive to create innovative and efficient solutions.
-                                I am always eager to learn and explore emerging technologies, particularly in AI, full-stack development, and cloud computing. My goal is to contribute my skills and passion for technology to a forward-thinking organization, helping build impactful software solutions that enhance user experiences.
-                                Let's connect and collaborate!
-                            </p>
+                        <div className="row featurette">
+
+                            <div className="col-md-5">
+                                <img
+                                    src={pfp}
+                                    alt={pfp}
+                                    width={400}
+                                    height={400}
+                                />
+                                <p className="lead" style={{ backgroundColor: "#ededed", padding: 15 }}>
+                                    I am a Computer Science graduate from California State University, Long Beach, with a strong passion for software development, artificial intelligence, and problem-solving. My expertise lies in backend development, database management, and AI-driven applications, where I strive to create innovative and efficient solutions.
+                                    I am always eager to learn and explore emerging technologies, particularly in AI, full-stack development, and cloud computing. My goal is to contribute my skills and passion for technology to a forward-thinking organization, helping build impactful software solutions that enhance user experiences.
+                                    Let's connect and collaborate!
+                                </p>
+                            </div>
+
+                            <div className="col-md-7">
+
+                            </div>
                         </div>
-                        
-                        <div className="col-md-7">
-                            
-                        </div>
-                        
-                    </div>
+                    </section>
 
                     <hr className="featurette-divider" />
 

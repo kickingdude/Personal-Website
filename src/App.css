@@ -46,6 +46,7 @@ body{
     justify-content:center;
     align-content:center;
     align-items:flex-start;
+    background-color: dimgrey;
 }
 .navigation-header {
     margin-right:2rem;
@@ -64,12 +65,13 @@ body{
     box-shadow: 0 4px 4px black;
     width: 100vw;
     backdrop-filter: blur(6px);
-    background: rgba(220, 250, 255, 0.95);
+    background: rgba(220, 250, 255, 0.90);
 }
 
 .navigation-item {
     margin-right: 2rem;
     color: black;
+    transition: 0.2s;
 }
 
 .flex-name {
@@ -77,25 +79,17 @@ body{
     margin-right:auto;
 }
 
-.about-me-header {
-    position: relative;
-    font-size: 5.5rem;
-    font-weight: 700;
-    margin-top: 9rem;
-    margin-bottom: 13rem;
-    z-index: 9999;
-    
-    margin-left: 200px;
-    margin-right: 200px;
-    background: rgba(220, 250, 255, 1);
-}
-
 .about-me {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+
 .portfolio {
-    width: 1300px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -103,11 +97,44 @@ body{
     align-items: center;
 }
 
-.portfolio-header {
-    position: relative;
+.about-me-header {
+    /* background: #99BC85; */
     font-size: 5.5rem;
     font-weight: 700;
-    margin-top: 9rem;
     margin-bottom: 13rem;
+    margin-top: 9rem;
+    position: relative;
     z-index: 9999;
+    border-bottom-color: #99BC85;
+    border-bottom-width: 18px;
+    border-bottom-style: solid;
+    left: 3.5rem;
 }
+
+.portfolio-header {
+    /* background: #99BC85; */
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-bottom: 13rem;
+    margin-top: 9rem;
+    position: relative;
+    z-index: 9999;
+    border-bottom-color: #99BC85;
+    border-bottom-width: 18px;
+    border-bottom-style: solid;
+    left: 3.5rem;
+}
+
+/*
+    Change to white, black, and a random color to make it pop out more. Switch between white and black when feeling frisky
+    #F2EFE7
+    #9ACBD0
+    #48A6A7
+    #2973B2
+*/
+/*
+    #FAF1E6
+    #FDFAF6
+    #E4EFE7
+    #99BC85
+*/
