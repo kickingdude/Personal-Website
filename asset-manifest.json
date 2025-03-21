@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Personal-Website/static/css/main.0dbe2b0a.css",
+    "main.css": "/Personal-Website/static/css/main.72647a70.css",
     "main.js": "/Personal-Website/static/js/main.7bac0caf.js",
     "static/js/453.253ccfac.chunk.js": "/Personal-Website/static/js/453.253ccfac.chunk.js",
     "static/media/poggingdude.png": "/Personal-Website/static/media/poggingdude.b34e60ef7a36250e278e.png",
     "index.html": "/Personal-Website/index.html",
-    "main.0dbe2b0a.css.map": "/Personal-Website/static/css/main.0dbe2b0a.css.map",
+    "main.72647a70.css.map": "/Personal-Website/static/css/main.72647a70.css.map",
     "main.7bac0caf.js.map": "/Personal-Website/static/js/main.7bac0caf.js.map",
     "453.253ccfac.chunk.js.map": "/Personal-Website/static/js/453.253ccfac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0dbe2b0a.css",
+    "static/css/main.72647a70.css",
     "static/js/main.7bac0caf.js"
   ]
 }
