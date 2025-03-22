@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Personal-Website/static/css/main.6f82a0d2.css",
-    "main.js": "/Personal-Website/static/js/main.849ed8d7.js",
+    "main.css": "/Personal-Website/static/css/main.b918a1ea.css",
+    "main.js": "/Personal-Website/static/js/main.dd6d5bc2.js",
     "static/js/453.253ccfac.chunk.js": "/Personal-Website/static/js/453.253ccfac.chunk.js",
     "static/media/poggingdude.png": "/Personal-Website/static/media/poggingdude.b34e60ef7a36250e278e.png",
     "index.html": "/Personal-Website/index.html",
-    "main.6f82a0d2.css.map": "/Personal-Website/static/css/main.6f82a0d2.css.map",
-    "main.849ed8d7.js.map": "/Personal-Website/static/js/main.849ed8d7.js.map",
+    "main.b918a1ea.css.map": "/Personal-Website/static/css/main.b918a1ea.css.map",
+    "main.dd6d5bc2.js.map": "/Personal-Website/static/js/main.dd6d5bc2.js.map",
     "453.253ccfac.chunk.js.map": "/Personal-Website/static/js/453.253ccfac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f82a0d2.css",
-    "static/js/main.849ed8d7.js"
+    "static/css/main.b918a1ea.css",
+    "static/js/main.dd6d5bc2.js"
   ]
 }
