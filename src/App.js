@@ -1,5 +1,6 @@
 import React from 'react';
 //import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import pfp from './poggingdude.png'
 
@@ -12,19 +13,9 @@ export default function App() {
                 <title>Kameron Ferrer | CS Graduate</title>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link
-                    rel="stylesheet"
-                    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-                    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-                    crossOrigin="anonymous"
-                />
             </head>
             <body>
-                <div id="nav-bar" className="navigation-bar" style={{ backgroundColor: "#ccebf1" }}>
+                <div id="nav-bar" className="navigation-bar">
                     <div id="nav-header" className="navigation-header">
                         <a className="navigation-item" href="#about">
                             About
@@ -44,26 +35,78 @@ export default function App() {
                     <hr className="featurette-divider" />
                     <section id="about" className="about-me">
                         <div className="about-me-header">
-                            ABOUT <span className="text-muted">ME</span>
+                            About
                         </div>
-                        <div className="row featurette">
-
-                            <div className="col-md-5">
-                                <img
+                        <div className="about-content">
+                            <div className="profile">
+                                <img className="profile-pfp"
                                     src={pfp}
                                     alt={pfp}
-                                    width={400}
-                                    height={400}
                                 />
-                                <p className="lead" style={{ backgroundColor: "#ededed", padding: 15 }}>
+                                <p className="profile-intro">
                                     I am a Computer Science graduate from California State University, Long Beach, with a strong passion for software development, artificial intelligence, and problem-solving. My expertise lies in backend development, database management, and AI-driven applications, where I strive to create innovative and efficient solutions.
                                     I am always eager to learn and explore emerging technologies, particularly in AI, full-stack development, and cloud computing. My goal is to contribute my skills and passion for technology to a forward-thinking organization, helping build impactful software solutions that enhance user experiences.
                                     Let's connect and collaborate!
                                 </p>
                             </div>
+                            <div className="profile-skills">
+                                <div className="skills-rows">
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            HTML
+                                        </div>
+                                    </div>
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            JAVA
+                                        </div>
+                                    </div>
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            PYTHON
+                                        </div>
+                                    </div>
 
-                            <div className="col-md-7">
-
+                                </div>
+                                <div className="skills-rows">
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            JAVASCRIPT
+                                        </div>
+                                    </div>
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            REACT
+                                        </div>
+                                    </div>
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            SPRING
+                                        </div>
+                                    </div>
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            MONGODB
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="skills-rows">
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            GIT
+                                        </div>
+                                    </div>
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            FIREBASE
+                                        </div>
+                                    </div>
+                                    <div className="skills">
+                                        <div className="skills-name">
+                                            JAVALIN
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
