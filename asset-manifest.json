@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Personal-Website/static/css/main.e0107e80.css",
+    "main.css": "/Personal-Website/static/css/main.1dc00b5b.css",
     "main.js": "/Personal-Website/static/js/main.58560b0c.js",
     "static/js/453.253ccfac.chunk.js": "/Personal-Website/static/js/453.253ccfac.chunk.js",
     "static/media/poggingdude.png": "/Personal-Website/static/media/poggingdude.b34e60ef7a36250e278e.png",
@@ -13,12 +13,12 @@
     "static/media/Javascript.png": "/Personal-Website/static/media/Javascript.00fd0fae01e451c5460a.png",
     "static/media/Git.png": "/Personal-Website/static/media/Git.db50ab024b0eeb2e7af0.png",
     "index.html": "/Personal-Website/index.html",
-    "main.e0107e80.css.map": "/Personal-Website/static/css/main.e0107e80.css.map",
+    "main.1dc00b5b.css.map": "/Personal-Website/static/css/main.1dc00b5b.css.map",
     "main.58560b0c.js.map": "/Personal-Website/static/js/main.58560b0c.js.map",
     "453.253ccfac.chunk.js.map": "/Personal-Website/static/js/453.253ccfac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0107e80.css",
+    "static/css/main.1dc00b5b.css",
     "static/js/main.58560b0c.js"
   ]
 }
