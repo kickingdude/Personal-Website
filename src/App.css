@@ -49,6 +49,11 @@ body {
     background-color: rgb(26, 26, 26) !important;
     color: white !important;
 }
+
+.container{
+    max-width:1700px;
+    margin-top:30px;
+}
 .navigation-header {
     margin-right:2rem;
     font-size: 1.5rem;
@@ -185,13 +190,16 @@ a:active {
     transform: translateX(300px);
 }
 .profile-pfp {
-    width:12rem;
-    height:12rem;
+    width:20rem;
+    height:20rem;
 }
 
 .profile-intro {
     padding: 15px;
-    width:500px;
+    width:600px;
+    font-size:1.3rem;
+    line-height:1.8;
+    font-weight:600;
 }
 
 .profile-skills {
@@ -228,13 +236,13 @@ a:active {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 100px;
-    width: 160px;
+    height: auto;
+    width: 200px;
     
 }
 
 .skills img {
-    width:55px;
+    width:80px;
 }
 .skills-name{
     font-size:1.2rem;
@@ -243,6 +251,9 @@ a:active {
 
 }
 
+.portfolio-content {
+    display:grid;
+}
 /*
     Change to white, black, and a random color to make it pop out more. Switch between white and black when feeling frisky
     #F2EFE7

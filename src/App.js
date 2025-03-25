@@ -21,34 +21,28 @@ export default function App() {
     const [portfolioVisible, setPortfolioVisible] = useState(false);
     const [contactVisible, setContactVisible] = useState(false);
     const [visibleSection, setVisibleSection] = useState('');
-
+    const thresholdArray = Array.from({ length: 101 }, (_, i) => i / 100);
     useEffect(() => {
         const sections = document.querySelectorAll('section');
         const profile = document.querySelector('#profile');
         const profile_skills = document.querySelector('#profile-skills');
-        const observer = new IntersectionObserver(
-            (entries) => {
-                let maxIntersectionRatio = 0;
-                let mostVisibleElement = null;
+        const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                    if (entry.intersectionRatio > maxIntersectionRatio) {
-                        maxIntersectionRatio = entry.intersectionRatio;
-                        mostVisibleElement = entry.target;
-
+                    if (entry.isIntersecting) {
+                        setVisibleSection(entry.target.id);
+                        if (entry.target.id == 'about') {
+                            profile.classList.add('profile_fade-in')
+                            profile_skills.classList.add('profile-skills_fade-in')
+                        }
                     }
                 });
 
-                if (mostVisibleElement.id == 'about') {
-                    profile.classList.add('profile_fade-in')
-                    profile_skills.classList.add('profile-skills_fade-in')
-                }
-                console.log(mostVisibleElement.id);
-                setVisibleSection(mostVisibleElement.id);
             }, {
                 root: null,
-                threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+                threshold: 0.5
         });
         sections.forEach((section) => observer.observe(section));
+        
 
         return () => {
             sections.forEach((section) => observer.unobserve(section));
@@ -78,7 +72,7 @@ export default function App() {
 
                 <br />
 
-                <div className="container" style={{ marginTop: 30 }}>
+                <div className="container">
                     <hr className="featurette-divider" />
                     <section id="about" className="about-me">
                         <div className="about-me-header">
@@ -154,13 +148,25 @@ export default function App() {
                         <div className="portfolio-header" id="portfolio-header">
                             Portfolio
                         </div>
-                        <div id="portfolio-content" className="row featurette">
-                            <button style={{
+                        <div id="portfolio-content" className="portfolio-content">
+                            <a style={{
                                 padding: 100
                             }
                             }>
                                 Hello
-                            </button>
+                            </a>
+                            <a style={{
+                                padding: 100
+                            }
+                            }>
+                                Hello
+                            </a>
+                            <a style={{
+                                padding: 100
+                            }
+                            }>
+                                Hello
+                            </a>
                         </div>
                     </section>
 
