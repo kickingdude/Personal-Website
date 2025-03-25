@@ -1,5 +1,5 @@
 import React from 'react';
-//import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import pfp from './images/poggingdude.png';
@@ -17,6 +17,43 @@ import tensorflow from './images/Tensorflow_logo.png'
 
 export default function App() {
     //let pfp = require('./poggingdude.png');
+    const [aboutVisible, setAboutVisible] = useState(false);
+    const [portfolioVisible, setPortfolioVisible] = useState(false);
+    const [contactVisible, setContactVisible] = useState(false);
+    const [visibleSection, setVisibleSection] = useState('');
+
+    useEffect(() => {
+        const sections = document.querySelectorAll('section');
+        const profile = document.querySelector('#profile');
+        const profile_skills = document.querySelector('#profile-skills');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                let maxIntersectionRatio = 0;
+                let mostVisibleElement = null;
+                entries.forEach((entry) => {
+                    if (entry.intersectionRatio > maxIntersectionRatio) {
+                        maxIntersectionRatio = entry.intersectionRatio;
+                        mostVisibleElement = entry.target;
+
+                    }
+                });
+
+                if (mostVisibleElement.id == 'about') {
+                    profile.classList.add('profile_fade-in')
+                    profile_skills.classList.add('profile-skills_fade-in')
+                }
+                console.log(mostVisibleElement.id);
+                setVisibleSection(mostVisibleElement.id);
+            }, {
+                root: null,
+                threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+        });
+        sections.forEach((section) => observer.observe(section));
+
+        return () => {
+            sections.forEach((section) => observer.unobserve(section));
+        };
+    }, []);
     return (
         <>
             <head>
@@ -27,13 +64,13 @@ export default function App() {
             <body>
                 <div id="nav-bar" className="navigation-bar">
                     <div id="nav-header" className="navigation-header">
-                        <a className="navigation-item" href="#about">
+                        <a className={`navigation-item ${visibleSection ==='about'? 'navigation-item--active' : ''}`} href="#about">
                             About
                         </a>
-                        <a className="navigation-item" href="#portfolio">
+                        <a className={`navigation-item ${visibleSection === 'portfolio' ? 'navigation-item--active' : ''}`} href="#portfolio">
                             Portfolio
                         </a>
-                        <a className="navigation-item" href="#contact">
+                        <a className={`navigation-item ${visibleSection === 'contact' ? 'navigation-item--active' : ''}`} href="#contact">
                             Contact
                         </a>
                     </div>
@@ -47,8 +84,8 @@ export default function App() {
                         <div className="about-me-header">
                             About
                         </div>
-                        <div className="about-content">
-                            <div className="profile">
+                        <div id = "about-content" className="about-content">
+                            <div id="profile" className='profile'>
                                 <img className="profile-pfp"
                                     src={pfp}
                                     alt={pfp}
@@ -59,7 +96,7 @@ export default function App() {
                                     Let's connect and collaborate!
                                 </p>
                             </div>
-                            <div className="profile-skills">
+                            <div id="profile-skills" className='profile-skills'>
                                 <div className="skills-rows">
                                     <div className="skills">
                                         <img src={html} alt={html} />

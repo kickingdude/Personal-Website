@@ -89,6 +89,10 @@ a:active {
     color:white;
 }
 
+.navigation-item--active {
+    color: #00D9E6;
+}
+
 .flex-name {
     padding:15px;
     margin-right:auto;
@@ -116,7 +120,7 @@ a:active {
     /* background: #99BC85; */
     font-size: 5.5rem;
     font-weight: 700;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     position: relative;
     z-index: 9999;
     
@@ -140,7 +144,7 @@ a:active {
     /* background: #99BC85; */
     font-size: 5.5rem;
     font-weight: 700;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     position: relative;
     z-index: 9999;
 }
@@ -171,6 +175,14 @@ a:active {
     flex-direction:column;
     align-items:center;
     position:relative;
+    opacity:0;
+    transition:all 1.1s;
+    left:-300px;
+}
+
+.profile_fade-in {
+    opacity: 1;
+    transform: translateX(300px);
 }
 .profile-pfp {
     width:12rem;
@@ -182,9 +194,18 @@ a:active {
     width:500px;
 }
 
-.profile-skills{
-    display:flex;
-    justify-content:center;
+.profile-skills {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    right: -300px;
+    opacity: 0;
+    transition: all 1.1s;
+}
+
+.profile-skills_fade-in {
+    opacity: 1;
+    transform: translateX(-300px);
 }
 .skills-rows{
     display:flex;
@@ -209,6 +230,7 @@ a:active {
     justify-content: space-evenly;
     height: 100px;
     width: 160px;
+    
 }
 
 .skills img {
