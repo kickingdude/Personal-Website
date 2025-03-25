@@ -190,18 +190,29 @@ a:active {
     display:flex;
     flex-direction:column;
     justify-content:center;
+    
+}
+
+.skills-rows:not(:last-child){
+    margin-right:25px;
 }
 .skills {
     margin-bottom: 3rem;
     border: double;
     border-color: #00D9E6;
-    border-width:3px;
-    border-radius:10px;
-    display:flex;
-    position:relative;
-    flex-direction:column;
-    align-items:center;
-    justify-content:space-evenly;
+    border-width: 3px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
+    width: 160px;
+}
+
+.skills img {
+    width:55px;
 }
 .skills-name{
     font-size:1.2rem;

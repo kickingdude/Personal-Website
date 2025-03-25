@@ -2,7 +2,17 @@ import React from 'react';
 //import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import pfp from './poggingdude.png'
+import pfp from './images/poggingdude.png';
+import firebase from './images/firebase.png';
+import git from './images/Git.png';
+import html from './images/html.png';
+import java from './images/java.png';
+import js from './images/Javascript.png';
+import mongodb from './images/mongodb.png';
+import python from './images/Python.png';
+import react from './images/React.png';
+import spring from './images/Spring.png';
+import tensorflow from './images/Tensorflow_logo.png'
 
 
 export default function App() {
@@ -52,59 +62,49 @@ export default function App() {
                             <div className="profile-skills">
                                 <div className="skills-rows">
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            HTML
-                                        </div>
+                                        <img src={html} alt={html} />
+                                        <div className="skills-name">HTML</div>
                                     </div>
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            JAVA
-                                        </div>
+                                        <img src={java} alt={java} />
+                                        <div className="skills-name">JAVA</div>
                                     </div>
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            PYTHON
-                                        </div>
+                                        <img src={python} alt={python} />
+                                        <div className="skills-name">PYTHON</div>
                                     </div>
 
                                 </div>
                                 <div className="skills-rows">
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            JAVASCRIPT
-                                        </div>
+                                        <img src={js} alt={js} />
+                                        <div className="skills-name">JAVASCRIPT</div>
                                     </div>
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            REACT
-                                        </div>
+                                        <img src={react} alt={react} />
+                                        <div className="skills-name">REACT</div>
                                     </div>
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            SPRING
-                                        </div>
+                                        <img src={spring} alt={spring} />
+                                        <div className="skills-name">SPRING</div>
                                     </div>
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            MONGODB
-                                        </div>
+                                        <img src={mongodb} alt={mongodb} />
+                                        <div className="skills-name">MONGODB</div>
                                     </div>
                                 </div>
                                 <div className="skills-rows">
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            GIT
-                                        </div>
+                                        <img src={git} alt={git} />
+                                        <div className="skills-name">GIT</div>
                                     </div>
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            FIREBASE
-                                        </div>
+                                        <img src={firebase} alt={firebase} />
+                                        <div className="skills-name">FIREBASE</div>
                                     </div>
                                     <div className="skills">
-                                        <div className="skills-name">
-                                            JAVALIN
-                                        </div>
+                                        <img src={tensorflow} alt={tensorflow} />
+                                        <div className="skills-name">TENSORFLOW</div>
                                     </div>
                                 </div>
                             </div>
