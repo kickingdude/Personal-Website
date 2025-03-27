@@ -190,9 +190,17 @@ a:active {
     transform: translateX(300px);
 }
 .profile-pfp {
-    width:20rem;
-    height:20rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 100%;
+    border-width: 8px;
+    border-color: white;
+    border-style: solid;
+    cursor: pointer;
 }
+    .profile-pfp:hover {
+        border-color: #00D9E6;
+    }
 
 .profile-intro {
     padding: 15px;
@@ -227,7 +235,7 @@ a:active {
 }
 .skills {
     margin-bottom: 3rem;
-    border: double;
+    border: solid;
     border-color: #00D9E6;
     border-width: 3px;
     border-radius: 10px;
@@ -252,7 +260,58 @@ a:active {
 }
 
 .portfolio-content {
-    display:grid;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction:column;
+}
+.project-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    opacity:0;
+    position:relative;
+    top:300px;
+    transition:1.1s;
+}
+    .project-row a:hover{
+        color: white;
+        transform:translateY(-10px);
+    }
+.row_fade-in{
+    transform:translateY(-300px);
+    opacity:1;
+}
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid;
+    border-color: #00D9E6;
+    border-width: 5px;
+    border-radius: 10px;
+    flex:1;
+    margin:10px;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+
+.project-img{
+    width:auto;
+    height:80px;
+    margin-top:10px;
+}
+.project-title {
+    font-weight: 700;
+    font-size: 2.3rem;
+    text-align: center;
+}
+.project-txt {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom:10px;
 }
 /*
     Change to white, black, and a random color to make it pop out more. Switch between white and black when feeling frisky

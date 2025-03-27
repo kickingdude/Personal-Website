@@ -12,21 +12,23 @@ import mongodb from './images/mongodb.png';
 import python from './images/Python.png';
 import react from './images/React.png';
 import spring from './images/Spring.png';
-import tensorflow from './images/Tensorflow_logo.png'
+import tensorflow from './images/Tensorflow_logo.png';
+import chef from './images/icon.png';
+import revature from './images/revature_logo.png';
+import pokemon from './images/tcg.png';
+
 
 
 export default function App() {
     //let pfp = require('./poggingdude.png');
-    const [aboutVisible, setAboutVisible] = useState(false);
-    const [portfolioVisible, setPortfolioVisible] = useState(false);
-    const [contactVisible, setContactVisible] = useState(false);
     const [visibleSection, setVisibleSection] = useState('');
-    const thresholdArray = Array.from({ length: 101 }, (_, i) => i / 100);
+    
     useEffect(() => {
         const sections = document.querySelectorAll('section');
         const profile = document.querySelector('#profile');
         const profile_skills = document.querySelector('#profile-skills');
-        const observer = new IntersectionObserver((entries) => {
+        const projects = document.querySelectorAll('.project-row');
+        const section_observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         setVisibleSection(entry.target.id);
@@ -41,11 +43,26 @@ export default function App() {
                 root: null,
                 threshold: 0.5
         });
-        sections.forEach((section) => observer.observe(section));
+        const projects_observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    if (entry.target.className == 'project-row') {
+                        document.querySelector(`#${entry.target.id}`).classList.add('row_fade-in');
+                    }
+                }
+            });
+
+        }, {
+            root: null,
+            threshold: 0
+        });
+        sections.forEach((section) => section_observer.observe(section));
+        projects.forEach((row) => projects_observer.observe(row));
         
 
         return () => {
-            sections.forEach((section) => observer.unobserve(section));
+            sections.forEach((section) => section_observer.unobserve(section));
+            projects.forEach((row) => projects_observer.unobserve(row));
         };
     }, []);
     return (
@@ -149,31 +166,42 @@ export default function App() {
                             Portfolio
                         </div>
                         <div id="portfolio-content" className="portfolio-content">
-                            <a style={{
-                                padding: 100
-                            }
-                            }>
-                                Hello
-                            </a>
-                            <a style={{
-                                padding: 100
-                            }
-                            }>
-                                Hello
-                            </a>
-                            <a style={{
-                                padding: 100
-                            }
-                            }>
-                                Hello
-                            </a>
+                            <div id = "row1" className="project-row">
+                                <a className="project" href="https://github.com/Ratio-plusplus/Genielicious">
+                                    <img src={chef} alt={chef} className="project-img"/>
+                                    <div className="project-title">
+                                    Genielicious
+                                    </div>
+                                    <div className="project-txt">
+                                    AI-Powered Food Recommendation Mobile App 
+                                    </div>
+                                </a>
+                                <a className="project" href="https://github.com/kickingdude/kickingdude-pep-spring-project">
+                                    <img src={revature} alt={revature} className="project-img"/>
+                                    <div className="project-title">
+                                        Spring Social Media Blog API
+                                    </div>
+                                    <div className="project-txt">
+                                        Spring messaging with Revature
+                                    </div>
+                                </a>
+                                <a className="project" href="https://github.com/aldriechV/CardDatabase">
+                                    <img src={pokemon} alt={pokemon} className="project-img"/>
+                                    <div className="project-title">
+                                        Card Game Database
+                                    </div>
+                                    <div className="project-txt">
+                                        CV Infused Card Database
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </section>
 
 
                     <hr className="featurette-divider" />
 
-                    <div className="row featurette">
+                    <div id="contact"className="row featurette">
                         <div className="col-md-5">
                             <h2 className="featurette-heading">LINKS</h2>
                             <a
@@ -225,10 +253,10 @@ export default function App() {
                                     <a href="mailto:kameron.ferrer@student.csulb.edu">Kameron Ferrer</a>{" "}
                                     -{" "}
                                     <a href="https://www.twitch.tv/kickingdude16" target="_blank">
-                                        CECS Major
+                                        CS Undergraduate
                                     </a>
                                 </p>
-                                <p>Last updated on 1-27-24</p>
+                                <p>Last updated on 3-26-25</p>
                                 <i
                                     className="fas fa-chalkboard-teacher"
                                     style={{
