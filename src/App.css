@@ -46,8 +46,8 @@ body {
     justify-content: center;
     align-content: center;
     align-items: flex-start;
-    background-color: rgb(26, 26, 26) !important;
-    color: white !important;
+    background-color: rgb(26, 26, 26);
+    color: white;
 }
 
 .container{
@@ -312,6 +312,94 @@ a:active {
     font-weight: 300;
     text-align: center;
     margin-bottom:10px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.socials-header {
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 9999;
+}
+
+    .socials-header::before {
+        border-bottom: 18px solid #00d9e6;
+        content: "";
+        display: block;
+        left: 3.1rem;
+        position: relative;
+        top: 6.3rem;
+        width: 17rem;
+        z-index: -1;
+    }
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact_form-name {
+    margin-bottom: 6px;
+    padding: 1rem;
+    height: 4rem;
+    width: 500px;
+    resize: none;
+    border: none;
+    color: inherit;
+    background-color: #282828;
+    font-size: 1.6rem;
+    font-family: monserrat, sans-serif;
+    border-left: 2px solid transparent;
+    border-radius: 0;
+}
+.contact_form-email {
+    margin-bottom: 6px;
+    padding: 1rem;
+    height: 4rem;
+    width: 500px;
+    resize: none;
+    border: none;
+    color: inherit;
+    background-color: #282828;
+    font-size: 1.6rem;
+    font-family: monserrat, sans-serif;
+    border-left: 2px solid transparent;
+    border-radius: 0;
+}
+.contact_form-message {
+    width: 500px;
+    resize: none;
+    border: none;
+    color: inherit;
+    background-color: #282828;
+    font-size: 1.6rem;
+    font-family: monserrat, sans-serif;
+    border-left: 2px solid transparent;
+    border-radius: 0;
+    height: 12rem;
+    padding: 1rem;
+}
+.social-links {
+    display: flex;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.social-img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 /*
     Change to white, black, and a random color to make it pop out more. Switch between white and black when feeling frisky

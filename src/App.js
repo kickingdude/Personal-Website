@@ -16,8 +16,57 @@ import tensorflow from './images/Tensorflow_logo.png';
 import chef from './images/icon.png';
 import revature from './images/revature_logo.png';
 import pokemon from './images/tcg.png';
+import github from './images/github.png';
+import linkedin from './images/linkedin.png';
+import mail from './images/mail.png';
+import { useForm, ValidationError } from '@formspree/react';
 
-
+function ContactForm() {
+    const [state, handleSubmit] = useForm("mkgjvrpd");
+    if (state.succeeded) {
+        return <p>Thanks for joining!</p>;
+    }
+    return (
+        <form className="contact_form"onSubmit={handleSubmit}>
+            <input className="contact_form-name"
+                id="name"
+                type="name"
+                name="name"
+                placeholder="Name"
+            />
+            <ValidationError
+                prefix="Name"
+                field="name"
+                errors={state.errors}
+            />
+            <input
+                className="contact_form-email"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email"
+            />
+            <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+            />
+            <textarea
+                className="contact_form-message"
+                id="message"
+                name="message"
+            />
+            <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+            />
+            <button type="submit" disabled={state.submitting}>
+                Submit
+            </button>
+        </form>
+    );
+}
 
 export default function App() {
     //let pfp = require('./poggingdude.png');
@@ -65,6 +114,10 @@ export default function App() {
             projects.forEach((row) => projects_observer.unobserve(row));
         };
     }, []);
+
+    
+
+    
     return (
         <>
             <head>
@@ -81,8 +134,8 @@ export default function App() {
                         <a className={`navigation-item ${visibleSection === 'portfolio' ? 'navigation-item--active' : ''}`} href="#portfolio">
                             Portfolio
                         </a>
-                        <a className={`navigation-item ${visibleSection === 'contact' ? 'navigation-item--active' : ''}`} href="#contact">
-                            Contact
+                        <a className={`navigation-item ${visibleSection === 'contact' ? 'navigation-item--active' : ''}`} href="#socials">
+                            Socials
                         </a>
                     </div>
                 </div>
@@ -201,58 +254,29 @@ export default function App() {
 
                     <hr className="featurette-divider" />
 
-                    <div id="contact"className="row featurette">
-                        <div className="col-md-5">
-                            <h2 className="featurette-heading">LINKS</h2>
-                            <a
-                                style={{
-                                    textDecoration: "none",
-                                    border: "0.2px solid #000",
-                                    color: "#000",
-                                    background: "#e6e4e4",
-                                    padding: 5,
-                                    borderRadius: 1
-                                }}
-                                href="https://github.com/kickingdude"
-                            >
-                                Github
+                    <div id="socials" className="socials">
+                        <h2 className="socials-header">Socials</h2>
+                        <ContactForm/>
+                        <div className="social-links">
+                            <a href="https://github.com/kickingdude">
+                                <img className="social-img" src={github} alt={github} />
                             </a>
-                            <a
-                                style={{
-                                    textDecoration: "none",
-                                    border: "0.2px solid #000",
-                                    color: "#000",
-                                    background: "#e6e4e4",
-                                    padding: 5,
-                                    borderRadius: 1
-                                }}
-                                href="https://www.linkedin.com/in/kameron-ferrer/"
-                            >
-                                LinkedIn
+                            <a href="https://www.linkedin.com/in/kameron-ferrer/">
+                                <img className="social-img" src={linkedin} alt={linkedin} />
                             </a>
-                            <a
-                                style={{
-                                    textDecoration: "none",
-                                    border: "0.2px solid #000",
-                                    color: "#000",
-                                    background: "#e6e4e4",
-                                    padding: 5,
-                                    borderRadius: 1
-                                }}
-                                href="https://www.twitch.tv/kickingdude16"
-                            >
-                                Twitch
+                            <a href="mailto:kameronferrer8@gmail.com">
+                                <img className="social-img" src={mail} alt={mail} />
                             </a>
                         </div>
+                        
 
                         <ul>
-                            <hr className="featurette-divider" />
                             <div className="jumbotron text-center" style={{ marginBottom: 0 }}>
                                 <p>
                                     Created by{" "}
-                                    <a href="mailto:kameron.ferrer@student.csulb.edu">Kameron Ferrer</a>{" "}
+                                    <a href="mailto:kameronferrer8@gmail.com">Kameron Ferrer</a>{" "}
                                     -{" "}
-                                    <a href="https://www.twitch.tv/kickingdude16" target="_blank">
+                                    <a target="_blank">
                                         CS Undergraduate
                                     </a>
                                 </p>
