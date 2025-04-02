@@ -23,47 +23,64 @@ import { useForm, ValidationError } from '@formspree/react';
 
 function ContactForm() {
     const [state, handleSubmit] = useForm("mkgjvrpd");
+    console.log("success");
     if (state.succeeded) {
-        return <p>Thanks for joining!</p>;
+
+        return <p>Thank you for your message!</p>;
     }
     return (
-        <form className="contact_form"onSubmit={handleSubmit}>
+        <form className="contact_form" onSubmit={(e) => {
+            e.preventDefault(); // Prevents page refresh
+            handleSubmit(e); // Submits the form
+        }}>
             <input className="contact_form-name"
                 id="name"
                 type="name"
                 name="name"
                 placeholder="Name"
+                required
             />
-            <ValidationError
-                prefix="Name"
-                field="name"
-                errors={state.errors}
-            />
+            
             <input
                 className="contact_form-email"
                 id="email"
                 type="email"
                 name="email"
                 placeholder="Email"
+                required
             />
-            <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-            />
+            
             <textarea
                 className="contact_form-message"
                 id="message"
                 name="message"
+                placeholder="Message"
+                required
             />
-            <ValidationError
-                prefix="Message"
-                field="message"
-                errors={state.errors}
-            />
-            <button type="submit" disabled={state.submitting}>
-                Submit
-            </button>
+            
+            <div className="error-submit">
+                <div className="form-error">
+                    <ValidationError
+                        prefix="Name"
+                        field="name"
+                        errors={state.errors}
+                    />
+                    <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                    />
+                    <ValidationError
+                        prefix="Message"
+                        field="message"
+                        errors={state.errors}
+                    />
+                </div>
+                <button className="submit-button" type="submit">
+                    Submit
+                </button>
+            </div>
+            
         </form>
     );
 }
@@ -134,8 +151,8 @@ export default function App() {
                         <a className={`navigation-item ${visibleSection === 'portfolio' ? 'navigation-item--active' : ''}`} href="#portfolio">
                             Portfolio
                         </a>
-                        <a className={`navigation-item ${visibleSection === 'contact' ? 'navigation-item--active' : ''}`} href="#socials">
-                            Socials
+                        <a className={`navigation-item ${visibleSection === 'contact' ? 'navigation-item--active' : ''}`} href="#contact">
+                            Contact
                         </a>
                     </div>
                 </div>
@@ -254,8 +271,8 @@ export default function App() {
 
                     <hr className="featurette-divider" />
 
-                    <div id="socials" className="socials">
-                        <h2 className="socials-header">Socials</h2>
+                    <div id="contact" className="socials">
+                        <h2 className="socials-header">Contact</h2>
                         <ContactForm/>
                         <div className="social-links">
                             <a href="https://github.com/kickingdude">
