@@ -348,7 +348,7 @@ a:active {
     justify-content: center;
 }
 .contact_form-name {
-    margin-bottom: 6px;
+    margin-bottom: 15px;
     padding: 1rem;
     height: 4rem;
     width: 500px;
@@ -356,13 +356,12 @@ a:active {
     border: none;
     color: inherit;
     background-color: #282828;
-    font-size: 1.6rem;
-    font-family: monserrat, sans-serif;
+    font-size: 1.3rem;
     border-left: 2px solid transparent;
     border-radius: 0;
 }
 .contact_form-email {
-    margin-bottom: 6px;
+    margin-bottom: 15px;
     padding: 1rem;
     height: 4rem;
     width: 500px;
@@ -370,8 +369,7 @@ a:active {
     border: none;
     color: inherit;
     background-color: #282828;
-    font-size: 1.6rem;
-    font-family: monserrat, sans-serif;
+    font-size: 1.3rem;
     border-left: 2px solid transparent;
     border-radius: 0;
 }
@@ -381,11 +379,10 @@ a:active {
     border: none;
     color: inherit;
     background-color: #282828;
-    font-size: 1.6rem;
-    font-family: monserrat, sans-serif;
+    font-size: 1.3rem;
     border-left: 2px solid transparent;
     border-radius: 0;
-    height: 12rem;
+    height: 17rem;
     padding: 1rem;
 }
 .error-submit {
@@ -446,25 +443,15 @@ a:active {
     position: relative;
     margin-bottom: 2rem;
 }
+.social-links a{
+    transition:0.5s;
+}
+.social-links a:hover {
+    transform: translateY(-10px);
+}
 .social-img {
     height: 50px;
     width: auto;
     margin-right: 10px;
     margin-left: 10px;
 }
-/*
-    Change to white, black, and a random color to make it pop out more. Switch between white and black when feeling frisky
-    #F2EFE7
-    #9ACBD0
-    #48A6A7
-    #2973B2
-*/
-/*
-    #FAF1E6
-    #FDFAF6
-    #E4EFE7
-    #99BC85
-*/
-/*
-    #00D9E6
-*/

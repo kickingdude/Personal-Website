@@ -19,77 +19,16 @@ import pokemon from './images/tcg.png';
 import github from './images/github.png';
 import linkedin from './images/linkedin.png';
 import mail from './images/mail.png';
-import { useForm, ValidationError } from '@formspree/react';
-
-function ContactForm() {
-    const [state, handleSubmit] = useForm("mkgjvrpd");
-    console.log("success");
-    if (state.succeeded) {
-
-        return <p>Thank you for your message!</p>;
-    }
-    return (
-        <form className="contact_form" onSubmit={(e) => {
-            e.preventDefault(); // Prevents page refresh
-            handleSubmit(e); // Submits the form
-        }}>
-            <input className="contact_form-name"
-                id="name"
-                type="name"
-                name="name"
-                placeholder="Name"
-                required
-            />
-            
-            <input
-                className="contact_form-email"
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-            />
-            
-            <textarea
-                className="contact_form-message"
-                id="message"
-                name="message"
-                placeholder="Message"
-                required
-            />
-            
-            <div className="error-submit">
-                <div className="form-error">
-                    <ValidationError
-                        prefix="Name"
-                        field="name"
-                        errors={state.errors}
-                    />
-                    <ValidationError
-                        prefix="Email"
-                        field="email"
-                        errors={state.errors}
-                    />
-                    <ValidationError
-                        prefix="Message"
-                        field="message"
-                        errors={state.errors}
-                    />
-                </div>
-                <button className="submit-button" type="submit">
-                    Submit
-                </button>
-            </div>
-            
-        </form>
-    );
-}
-
 export default function App() {
     //let pfp = require('./poggingdude.png');
     const [visibleSection, setVisibleSection] = useState('');
     
     useEffect(() => {
+        window.onbeforeunload = () => {
+            for (const form of document.getElementsByTagName('form')) {
+                form.reset();
+            }
+        }
         const sections = document.querySelectorAll('section');
         const profile = document.querySelector('#profile');
         const profile_skills = document.querySelector('#profile-skills');
@@ -132,9 +71,6 @@ export default function App() {
         };
     }, []);
 
-    
-
-    
     return (
         <>
             <head>
@@ -271,9 +207,41 @@ export default function App() {
 
                     <hr className="featurette-divider" />
 
-                    <div id="contact" className="socials">
+                    <section id="contact" className="socials">
                         <h2 className="socials-header">Contact</h2>
-                        <ContactForm/>
+                        <form action="https://formspree.io/f/mkgjvrpd" method="POST" className="contact_form" >
+                            <input className="contact_form-name"
+                                id="name"
+                                type="name"
+                                name="name"
+                                placeholder="Name"
+                                required
+                            />
+
+                            <input
+                                className="contact_form-email"
+                                id="email"
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                required
+                            />
+
+                            <textarea
+                                className="contact_form-message"
+                                id="message"
+                                name="message"
+                                placeholder="Message"
+                                required
+                            />
+
+                            <div className="error-submit">
+                                <button className="submit-button" type="submit">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+
                         <div className="social-links">
                             <a href="https://github.com/kickingdude">
                                 <img className="social-img" src={github} alt={github} />
@@ -286,7 +254,6 @@ export default function App() {
                             </a>
                         </div>
                         
-
                         <ul>
                             <div className="jumbotron text-center" style={{ marginBottom: 0 }}>
                                 <p>
@@ -297,7 +264,7 @@ export default function App() {
                                         CS Undergraduate
                                     </a>
                                 </p>
-                                <p>Last updated on 3-26-25</p>
+                                <p>Last updated on 04-03-25</p>
                                 <i
                                     className="fas fa-chalkboard-teacher"
                                     style={{
@@ -308,7 +275,7 @@ export default function App() {
                                 />
                             </div>
                         </ul>
-                    </div>
+                    </section>
                 </div>
             </body>
         </>
